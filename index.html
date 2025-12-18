@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dang Thanh Thai | Odoo Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0070d2; /* Màu xanh Salesforce/Professional */
+            --secondary-color: #f4f6f9;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-color: var(--white);
+            padding: 60px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #888;
+            border: 4px solid var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .role {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sections General */
+        section {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* About Section */
+        .about-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .timeline-item {
+            background: var(--white);
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .company {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #888;
+            background: #eee;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .job-desc ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+
+        .job-desc li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .edu-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-header {
+                flex-direction: column;
+            }
+            .date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Dang Thanh Thai</h1>
+            <p class="role">Software Engineer | Odoo Expert</p>
+            <div class="contact-info">
+                <a href="mailto:thanhthai04@gmail.com"><i class="fas fa-envelope"></i> thanhthai04@gmail.com</a>
+                <a href="tel:+84912276930"><i class="fas fa-phone"></i> (+84) 912276930</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> District 4, HCM</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">Profile Info</h2>
+            <div class="about-content">
+                <p>With a background in mathematics and information technology, I am highly proficient in Odoo development and possess a strong understanding of e-commerce platforms. I am dedicated to fostering a collaborative and efficient environment where team members can thrive and contribute their best work. Committed to continuous learning and seeking opportunities to lead innovative projects to drive organizational growth.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Expertise Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Odoo Development (v13-17)</span>
+                <span class="skill-tag">JavaScript / Owl JS</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Git Workflow</span>
+                <span class="skill-tag">XML / HTML</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">API Integration</span>
+                <span class="skill-tag">E-commerce Integration</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">VNG Solutions</div>
+                    </div>
+                    <div class="date">12/2024 - Now</div>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li>Developing and maintaining internal business management system using <strong>Odoo EE 17</strong>.</li>
+                        <li>Spearheaded HRM modules (Time Off, Approvals, Payroll, Timesheet).</li>
+                        <li>Designed advanced Payroll Reports and Payslip Templates compliant with localization needs.</li>
+                        <li>Developed flexible reporting feature for .doc/.docx exports.</li>
+                        <li>Applied GUI design thinking to improve Portal UX and reduced report load times.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Software Engineer | Tech Lead</div>
+                        <div class="company">Day One Software Technology</div>
+                    </div>
+                    <div class="date">10/2024 - 12/2024</div>
+                </div>
+                <div class="job-desc">
+                    <p><strong>Projects: Tony Wedding (Odoo 17 Ent) & Cocohitech (Odoo 17 Comm)</strong></p>
+                    <ul>
+                        <li>Integrated Trello to Odoo, focusing on backend logic and performance.</li>
+                        <li>Restructured Zalo ZNS module and optimized database schemas for large data volumes.</li>
+                        <li>Led team in resolving performance bottlenecks using multi-threading.</li>
+                        <li>Managed team collaboration and analyzed business workflows for CRM, Sale, Purchase, Inventory.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Software Engineer (Contractor)</div>
+                        <div class="company">LV Global LLC</div>
+                    </div>
+                    <div class="date">07/2024 - 12/2024</div>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li>Developed Odoo 17 Community modules integrating with Shopee, Lazada, TikiShop.</li>
+                        <li>Designed schemas for large e-commerce data volumes and implemented Webhook controllers (3-4k orders/day).</li>
+                        <li>Utilized queuing and multi-threading for system stability.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Odoo Developer</div>
+                        <div class="company">Trobz Consulting CO.</div>
+                    </div>
+                    <div class="date">09/2022 - 07/2024</div>
+                </div>
+                <div class="job-desc">
+                    <p><strong>Projects: TIS, ONESKY, TREEDOO, YOLA</strong></p>
+                    <ul>
+                        <li>Led development/maintenance of Odoo 15 & 17 modules (ERP School, CRM, Sales, HRM).</li>
+                        <li>Managed migrations to Odoo 17 and developed API connections for mobile apps.</li>
+                        <li>Mentored team members and conducted code reviews.</li>
+                        <li>Specifics: Owl JS dashboards, FastAPI integration, Payroll management, and Report generation (docxtpl, xlsxwriter).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Freelance Odoo | AppSheet</div>
+                        <div class="company">Self-Employed (CVT SHOP)</div>
+                    </div>
+                    <div class="date">01/2024 - Now</div>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li>Implemented Odoo solutions for e-commerce integration (Shopee, Lazada, TikiShop).</li>
+                        <li>Managed inventory, shipping logistics, and order fulfillment features.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">ERP Developer / Data Analyst</div>
+                        <div class="company">Mimosa Technology CO.</div>
+                    </div>
+                    <div class="date">01/2020 - 09/2022</div>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li>Developed TinyERP solutions for IoT-focused companies (Warehouse, Data processing).</li>
+                        <li>Analyzed large datasets from IoT devices to improve operational efficiency.</li>
+                        <li>Designed dashboards and visualizations for real-time monitoring.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <h3>Bachelor of Information Technology</h3>
+                    <p><strong>University of Science</strong></p>
+                    <p class="date">2021 - 2024</p>
+                </div>
+                <div class="edu-card">
+                    <h3>Bachelor of Math</h3>
+                    <p><strong>Dalat University</strong></p>
+                    <p class="date">2014 - 2018</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dang Thanh Thai. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
