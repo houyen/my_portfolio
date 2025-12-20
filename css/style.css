@@ -1,47 +1,326 @@
-/* Basic styles for the portfolio */
-body {
-    font-family: Arial, sans-serif;
+:root {
+    --primary-color: #0070d2; /* Màu xanh Salesforce/Professional */
+    --secondary-color: #f4f6f9;
+    --text-color: #333;
+    --text-light: #666;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header / Hero Section */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    background-color: var(--white);
+    padding: 60px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.profile-img {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #888;
+    border: 4px solid var(--primary-color);
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
 
-nav a {
-    color: #fff;
+.role {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: var(--text-light);
     text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.95rem;
 }
 
-main {
-    padding: 2rem;
+.contact-info a:hover {
+    color: var(--primary-color);
 }
 
+/* Sections General */
 section {
-    margin-bottom: 2rem;
+    padding: 50px 0;
 }
 
+.section-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+/* About Section */
+.about-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Experience Timeline */
+.timeline {
+    position: relative;
+    max-width: 100%;
+}
+
+.timeline-item {
+    background: var(--white);
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.2s;
+}
+
+.timeline-item:hover {
+    transform: translateY(-3px);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.company {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #888;
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.job-desc ul {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.job-desc li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Education */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.edu-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background: #2c3e50;
+    color: var(--white);
     text-align: center;
-    padding: 1rem;
-    position: fixed;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+/* --- PROJECT SECTION STYLES --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Slider Styles */
+/* Khung chứa slide: Quan trọng là position relative để làm mốc cho ảnh con */
+.slider-container {
+    position: relative !important;
     width: 100%;
-    bottom: 0;
+    height: 250px; /* Tăng chiều cao lên một chút cho đẹp */
+    background-color: #f0f0f0;
+    overflow: hidden; /* Cắt bỏ phần ảnh thừa */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ảnh slide: Bắt buộc phải absolute để xếp chồng lên nhau */
+.slide {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ tỉ lệ ảnh đẹp */
+    object-position: top center; /* Ưu tiên lấy phần trên của ảnh */
+    opacity: 0; /* Ẩn đi */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+/* Ảnh đang được chọn: Hiện lên */
+.slide.active {
+    opacity: 1 !important;
+    z-index: 2;
+}
+
+/* Nút điều hướng: Luôn nằm trên cùng */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10; /* Đảm bảo nút luôn nằm trên ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* Nội dung Card */
+.project-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Đẩy xuống đáy */
+}
+
+.tech-badge {
+    font-size: 0.8rem;
+    background: #e3f2fd;
+    color: var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .timeline-header {
+        flex-direction: column;
+    }
+    .date {
+        margin-top: 5px;
+    }
 }

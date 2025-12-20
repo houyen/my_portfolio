@@ -5,215 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dang Thanh Thai | Odoo Software Engineer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #0070d2; /* Màu xanh Salesforce/Professional */
-            --secondary-color: #f4f6f9;
-            --text-color: #333;
-            --text-light: #666;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header / Hero Section */
-        header {
-            background-color: var(--white);
-            padding: 60px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            background-color: #ddd;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #888;
-            border: 4px solid var(--primary-color);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .role {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .contact-info a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.95rem;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Sections General */
-        section {
-            padding: 50px 0;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-        }
-
-        /* About Section */
-        .about-content {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: var(--white);
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            border: 1px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            max-width: 100%;
-        }
-
-        .timeline-item {
-            background: var(--white);
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.2s;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-
-        .job-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-
-        .company {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .date {
-            font-size: 0.9rem;
-            color: #888;
-            background: #eee;
-            padding: 4px 8px;
-            border-radius: 4px;
-        }
-
-        .job-desc ul {
-            list-style-position: inside;
-            margin-left: 10px;
-        }
-
-        .job-desc li {
-            margin-bottom: 8px;
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        /* Education */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .edu-card {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: var(--white);
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline-header {
-                flex-direction: column;
-            }
-            .date {
-                margin-top: 5px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -240,6 +32,73 @@
             </div>
         </section>
 
+        <section id="projects">
+            <h2 class="section-title">Featured Modules & Systems</h2>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="slider-container" id="slider-1">
+                        <img src="images/img1.png" class="slide" alt="HR Dashboard">
+                        <button class="prev-btn" onclick="changeSlide('slider-1', -1)">&#10094;</button>
+                        <button class="next-btn" onclick="changeSlide('slider-1', 1)">&#10095;</button>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HRM & Advanced Payroll System</h3>
+                        <p class="project-desc">
+                            Customized Odoo 17 Enterprise for comprehensive HR management. Features include flexible Payroll Reports (.doc/.docx), localized Payslip templates, and optimized Employee Portal.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Odoo 17 EE</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">XML</span>
+                            <span class="tech-badge">Docxtpl</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="slider-container" id="slider-2">
+                        <button class="prev-btn" onclick="changeSlide('slider-2', -1)">&#10094;</button>
+                        <button class="next-btn" onclick="changeSlide('slider-2', 1)">&#10095;</button>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Omnichannel E-commerce Connector</h3>
+                        <p class="project-desc">
+                            High-performance integration for Shopee, Lazada, TiktokShop. Handles 3-4k orders/day using Webhooks and Multi-threading queue systems. Optimized database schema for large datasets.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Odoo 17 Comm</span>
+                            <span class="tech-badge">Multi-threading</span>
+                            <span class="tech-badge">Rest API</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="slider-container" id="slider-3">
+                        <img src="images/img2.png" class="slide" alt="Owl JS Dashboard">
+                        <img src="images/img3.png" class="slide" alt="Grading Logic">
+                        <img src="images/img4.png" class="slide" alt=" Management">
+                        <button class="prev-btn" onclick="changeSlide('slider-3', -1)">&#10094;</button>
+                        <button class="next-btn" onclick="changeSlide('slider-3', 1)">&#10095;</button>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Education ERP Management</h3>
+                        <p class="project-desc">
+                            Full-stack module for managing Student data, Grades, and Fees[cite: 49]. Includes interactive Owl JS Dashboards for scoring and API integration with mobile apps for parents.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Odoo 15</span>
+                            <span class="tech-badge">Owl JS</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">XlsxWriter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="skills">
             <h2 class="section-title">Expertise Skills</h2>
             <div class="skills-grid">
@@ -390,5 +249,36 @@
         </div>
     </footer>
 
+    <script>
+        // Hàm điều khiển Slide
+        function changeSlide(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const slides = slider.getElementsByClassName('slide');
+            let currentIndex = 0;
+
+            // Tìm slide đang hiển thị (có class active)
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].classList.contains('active')) {
+                    currentIndex = i;
+                    slides[i].classList.remove('active');
+                    break;
+                }
+            }
+
+            // Tính toán index tiếp theo
+            let nextIndex = currentIndex + direction;
+
+            // Xử lý vòng lặp (nếu hết ảnh thì quay lại đầu/cuối)
+            if (nextIndex >= slides.length) {
+                nextIndex = 0;
+            } else if (nextIndex < 0) {
+                nextIndex = slides.length - 1;
+            }
+
+            // Hiển thị slide tiếp theo
+            slides[nextIndex].classList.add('active');
+        }
+    </script>
+    
 </body>
 </html>
